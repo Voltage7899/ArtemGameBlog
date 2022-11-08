@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "500584602706",
+    "project_id": "blog-bcb80",
+    "storage_bucket": "blog-bcb80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500584602706:android:700851526bbd89a25a138b",
+        "android_client_info": {
+          "package_name": "com.company.artemmkrtchan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500584602706-3lls4viagcif2tlsgngg8n0ak6pj7vi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.artemmkrtchan",
+            "certificate_hash": "fe4e9bc1c7296759fc9245eed3eb89e82f4db492"
+          }
+        },
+        {
+          "client_id": "500584602706-7ak54vubgictbrtm6gs95259npgokah3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd1U46TTSviiRjZuTOyF6SDO2uhGjgibs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500584602706-7ak54vubgictbrtm6gs95259npgokah3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
