@@ -25,6 +25,30 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setTitle("Game")
 
+        val currentUser=FirebaseAuth.getInstance().currentUser
+        if(currentUser!=null){
+
+            fireStore.collection("Users").document(currentUser.uid).get()
+                .addOnCompleteListener {
+
+                    if(!it.result.exists()){
+                        startActivity(Intent(this,AccountSettings::class.java))
+
+                    }
+
+
+                }.addOnFailureListener {
+                    Toast.makeText(this,"Ошибка"+it.message,Toast.LENGTH_LONG).show()
+
+                }
+
+
+
+        }
+        else{
+            startActivity(Intent(this,Login::class.java))
+            finish()
+        }
         binding.floatingActionButton.setOnClickListener{
 
             startActivity(Intent(this,AddPost::class.java))
@@ -48,28 +72,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        val currentUser=FirebaseAuth.getInstance().currentUser
-        if(currentUser!=null){
 
-            fireStore.collection("Users").document(currentUser.uid).get()
-                .addOnCompleteListener {
-
-                    if(!it.result.exists()){
-                        startActivity(Intent(this,AccountSettings::class.java))
-                    }
-
-
-                }.addOnFailureListener {
-                    Toast.makeText(this,"Ошибка"+it.message,Toast.LENGTH_LONG).show()
-
-                }
-
-
-
-        }
-        else{
-            startActivity(Intent(this,Login::class.java))
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
